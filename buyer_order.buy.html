@@ -1,0 +1,76 @@
+<script type="text/javascript">
+function buy(giftid,quantity){
+	document.getElementById("giftid").value=giftid;
+	document.getElementById("quantity").value=quantity;
+	document.getElementById("form1").submit();
+	refreshComments();
+    DialogManager.close('buyer_order_buy');
+}
+/*
+function buy1(giftid,quantity){
+	var data1 = {
+		giftid:giftid,
+		quantity:quantity,
+		chan_id:{$chan_id},
+	}
+//   $.ajaxSetup({complete: onRequestCompleted});
+	$.ajax({
+	    cache: true,
+	    type: "POST",
+	    url:'index.php?app=buyer_order&act=buy&return_type=json',
+	    data:data1,
+	    async: false,
+	    dataType:"json",
+	    error: function(request) {
+	        alert("Connection error");
+	    },
+	    success: function(data) {
+//			if(data.err!="ok"){
+//				alert(data.err);
+//			}else{
+				DialogManager.close("buy_order_buy");
+//			}
+	    	//alert("success");
+//	    	alert(data.time);
+	    }
+	});
+	
+}
+
+//function onRequestCompleted(xhr,textStatus) {
+//	   if (xhr.status == 302) {
+//	      location.href = xhr.getResponseHeader("Location");
+//	   }
+//	}*/
+</script>
+<script type="text/javascript">
+$(function(){
+    $('#cancel_button').click(function(){
+        DialogManager.close('buyer_order_buy');
+    });
+});
+</script>
+</head>
+<body>
+<div style="width:80%;min-height:200px;">
+<div style="float:left;width:100%">
+<div style="float:left">您现在拥有：燕窝：{$mx}&nbsp;&nbsp;稻米:{$my}</div>
+<div style="float:right"><a href="index.php?app=cash&act=cz" style="text_decoration:none">去充值</a></div>
+</div>
+<div style="clear:both"></div>
+<form method="post" id ="form1" action="index.php?app=buyer_order&act=buy&return_type=json" target="iframe_post">
+<input type="hidden" name="chan_id" value={$chan_id} />
+<input type="hidden" id="giftid" name="giftid" />
+<input type="hidden" id="quantity" name = "quantity" />
+<!-- {foreach from=$gifts key=key item=item} -->
+<div style="float:left;">
+<img src="{$item.default_image}" onclick="buy({$item.goods_id},1)" style="margin-left:20px;width:50px;height:50px;margin-top:20px;" />
+<br /><span>{$item.goods_name}{if $item.price gt 99}<br />{/if}({$item.price}
+{if $item.cate_id==1185}稻米{else if $item.cate_id==1183}燕窝{/if})</span>
+</div>
+<!-- {foreachelse} -->
+<span>还没有礼物可供购买</span>
+<!-- {/foreach} -->
+</form>
+<!--input type="button" id="cancel_button" value="取消" style="width:50px;height:50px;" /-->
+</div>

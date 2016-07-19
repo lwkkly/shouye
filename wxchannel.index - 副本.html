@@ -1,0 +1,160 @@
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>FlyingBrid</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta content="width=device-width, height=device-height, user-scalable=no" name="viewport" />
+<!-- {$page_seo} -->
+
+        <style type="text/css">
+        body{padding:0; margin:0;}#videoId{position: relative;background-color: #000000;width: 100%;height: 100%;z-index: 1; }
+        </style>
+        <script type="text/javascript" src="http://vod.baofengcloud.com/html/script/libs/xss.min.js"></script>
+<!-- <link href="{$site_url}/themes/mall/default/styles/wxmall/css/common.css" type="text/css" rel="stylesheet" /> -->
+<link href="./swiper.css" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+<script src="./jquery.js"></script>
+<script src="./swiper.jquery.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+wx.config({
+    debug: false,
+    appId: '{$signPackage.appId}',
+    timestamp:{$signPackage.timestamp},
+    nonceStr: '{$signPackage.nonceStr}',
+    signature: '{$signPackage.signature}',
+    jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ'
+          ]
+});
+wx.ready(function(){
+      var shareData = {
+                title: '{$share.title}',
+                desc: '{$share.description}',
+                link: '{$share.redirect_url}',
+                imgUrl: '{$share.logourl}'
+              };
+        wx.onMenuShareAppMessage(shareData);
+        wx.onMenuShareTimeline(shareData);
+        wx.onMenuShareQQ(shareData);
+    });
+
+wx.error(function (res) {
+      alert(res.errMsg);
+    });
+
+</script>
+
+
+<style>
+.footer{position:fixed;bottom:0px;top:auto; background:#333; color:#fff; border-top:#b20005 solid 5px; overflow:hidden; padding:15px 0; margin-top:15px;}
+</style>
+</head>
+<body>
+    <div id="FBmain">
+        <header id="FBheader">
+            <a href="#" class="hd-logo"></a>
+            <a href="#" class="hd-huodong">
+                <img src="./hdhuodong.png" alt="" /><i>"最美母校"直播</i>
+            </a>
+        </header>
+        <figure id="FBbanner" class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="#"><img src="./banner1.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./banner2.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./banner3.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./banner4.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./banner5.jpg" alt=""></a></div>
+                <div class="swiper-slide"><a href="#"><img src="./banner3.jpg" alt=""></a></div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="FBcircle swiper-pagination"></div>
+
+            <!-- 如果需要导航按钮 -->
+            <!-- <div class="swiper-button-prev"></div> -->
+            <!-- <div class="swiper-button-next"></div> -->
+
+            <!-- 如果需要滚动条 -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+        </figure>
+        <section id="FBlive">
+            <ul class="FB-live-list">
+            <li class="list-item">
+                    <div class="listbar">
+                        <span class="listbar-right live">直播中</span>
+                    </div>
+                    <a href="#">
+                        <span class="listpeople"><i></i>30000</span>
+                        <div class="listvideo"><img src="./1.jpg" alt="" /></div>
+                        <p class="listname">德清第三中学</p>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <div class="listbar">
+                        <span class="listbar-right">未直播</span>
+                    </div>
+                    <a href="#">
+                        <span class="listpeople"><i></i>30000</span>
+                        <div class="listvideo"><img src="./2.jpg" alt="" /></div>
+                        <p class="listname">德清第三中学</p>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <div class="listbar">
+                        <span class="listbar-right live">直播中</span>
+                    </div>
+                    <a href="#">
+                        <span class="listpeople"><i></i>30000</span>
+                        <div class="listvideo"><img src="./3.jpg" alt="" /></div>
+                        <p class="listname">德清第三中学</p>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <div class="listbar">
+                        <span class="listbar-right">未直播</span>
+                    </div>
+                    <a href="#">
+                        <span class="listpeople"><i></i>30000</span>
+                        <div class="listvideo"><img src="./4.jpg" alt="" /></div>
+                        <p class="listname">德清第三中学</p>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <div class="listbar">
+                        <span class="listbar-right live">直播中</span>
+                    </div>
+                    <a href="#">
+                        <span class="listpeople"><i></i>30000</span>
+                        <div class="listvideo"><img src="./5.jpg" alt="" /></div>
+                        <p class="listname">德清第三中学</p>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <div class="listbar">
+                        <span class="listbar-right">未直播</span>
+                    </div>
+                    <a href="#">
+                        <span class="listpeople"><i></i>30000</span>
+                        <div class="listvideo"><img src="./6.jpg" alt="" /></div>
+                        <p class="listname">德清第三中学</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+<script> 
+        var mySwiper = new Swiper('.swiper-container',{
+            pagination : '.swiper-pagination',
+            initialSlide :2,
+            loop : true,
+            loopAdditionalSlides : 1,
+            autoplay:5000,
+        })
+</script>
+
+</body>
+</html>
